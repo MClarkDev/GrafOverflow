@@ -6,21 +6,25 @@ A metric collection script for the StackOverflow API.
 
 Here is a link for you to view some stats in real* time.
 
-[**https://www.grafoverflow.com/grafana/dashboard/db/stack-stats**](https://www.grafoverflow.com/grafana/dashboard/db/stack-stats)
+[**https://www.grafoverflow.com/**](https://www.grafoverflow.com/)
 
-The StatsUI is currently run via a hosted Grafana instance; you will be required to validate your email address upon signup.
+The StatsUI is currently run via a hosted Grafana instance; you will be required to validate your email address upon signup. If usage demands, the instance will be scaled.
 
 [![enter image description here][1]][1]
 
 [![enter image description here][2]][2]
 
-*Stats are collected every 5 minutes, and smoothed to a 30 minute average to account for API caching.
+*Stats are collected every 5 minutes, and smoothed to a 30 minute average to account for API caching ( on the query ).
 
 ## About
 
-Having been running instances of [carbon-cache](http://graphite.readthedocs.io/en/latest/carbon-daemons.html) and [Grafana](https://grafana.com/) for metric collection of personal services - I decided to write up a quick **node.js** application that will periodically poll the Stack API and fetch some general statistics.
+Data is beautiful, so why not draw some graphs about the site that helps me draw some graphs.
 
-In the below screenshot, you can see the result of simply collecting and  graphing the data returned by the [/info](https://api.stackexchange.com/docs/info) api endpoint.
+This scripts is based around the [carbon-cache](http://graphite.readthedocs.io/en/latest/carbon-daemons.html) metric storage backend, and is using [Grafana](https://grafana.com/) for the UI.
+
+To query the API, I write up a quick **node.js** script that will run a collection on a 5 minute interval.
+
+In the above screenshots, you can see the result of simply collecting and graphing the data returned by the [/info](https://api.stackexchange.com/docs/info) api endpoint.
 
 The list of statistics collected and graphed:
 
