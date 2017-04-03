@@ -1,47 +1,5 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_STACKSTATS0",
-      "label": "stackStats0",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "graphite",
-      "pluginName": "Graphite"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "singlestat",
-      "name": "Singlestat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "text",
-      "name": "Text",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "4.0.2"
-    },
-    {
-      "type": "datasource",
-      "id": "graphite",
-      "name": "Graphite",
-      "version": "1.0.0"
-    }
-  ],
-  "id": null,
+  "id": 26,
   "title": "Stack Stats",
   "tags": [],
   "style": "dark",
@@ -86,10 +44,35 @@
   },
   "refresh": "5m",
   "schemaVersion": 13,
-  "version": 17,
+  "version": 33,
   "links": [],
   "gnetId": null,
   "rows": [
+    {
+      "title": "Header",
+      "panels": [
+        {
+          "content": "<iframe src=\"https://www.grafoverflow.com/static/header.html\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" style=\"position: absolute; width: 100%;  height: 100%; top: 0px; left: 0px; bottom: 0px; right: 0px;\"></iframe>",
+          "editable": true,
+          "error": false,
+          "height": "",
+          "id": 26,
+          "links": [],
+          "mode": "html",
+          "span": 12,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "100px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    },
     {
       "title": "Stats",
       "panels": [
@@ -102,7 +85,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": null,
           "editable": true,
           "error": false,
@@ -157,7 +140,7 @@
             }
           ],
           "thresholds": "",
-          "timeFrom": "15m",
+          "timeFrom": "3h",
           "title": "Total Questions",
           "transparent": true,
           "type": "singlestat",
@@ -180,7 +163,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": null,
           "editable": true,
           "error": false,
@@ -235,7 +218,7 @@
             }
           ],
           "thresholds": "",
-          "timeFrom": "15m",
+          "timeFrom": "3h",
           "title": "Total Answers",
           "transparent": true,
           "type": "singlestat",
@@ -258,7 +241,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -270,6 +253,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 18,
           "interval": null,
           "links": [],
@@ -318,6 +302,7 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "3h",
           "title": "Accepted Percentage",
           "transparent": false,
           "type": "singlestat",
@@ -340,7 +325,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": null,
           "editable": true,
           "error": false,
@@ -395,7 +380,7 @@
             }
           ],
           "thresholds": "",
-          "timeFrom": "15m",
+          "timeFrom": "3h",
           "title": "Total Votes",
           "transparent": true,
           "type": "singlestat",
@@ -418,7 +403,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": null,
           "editable": true,
           "error": false,
@@ -473,7 +458,7 @@
             }
           ],
           "thresholds": "",
-          "timeFrom": "15m",
+          "timeFrom": "3h",
           "title": "Total Comments",
           "transparent": true,
           "type": "singlestat",
@@ -496,7 +481,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": null,
           "editable": true,
           "error": false,
@@ -551,7 +536,7 @@
             }
           ],
           "thresholds": "",
-          "timeFrom": "15m",
+          "timeFrom": "3h",
           "timeShift": null,
           "title": "Total Users",
           "transparent": true,
@@ -575,19 +560,19 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": 2,
           "editable": true,
           "error": false,
           "format": "short",
           "gauge": {
-            "maxValue": 100,
+            "maxValue": 25,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "hideTimeOverride": true,
+          "hideTimeOverride": false,
           "id": 19,
           "interval": null,
           "links": [],
@@ -630,8 +615,8 @@
               "textEditor": false
             }
           ],
-          "thresholds": "0,0",
-          "timeFrom": "1h",
+          "thresholds": "0,1",
+          "timeFrom": null,
           "timeShift": null,
           "title": "Questions per Minute",
           "transparent": false,
@@ -655,19 +640,19 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": 2,
           "editable": true,
           "error": false,
           "format": "short",
           "gauge": {
-            "maxValue": 100,
+            "maxValue": 25,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "hideTimeOverride": true,
+          "hideTimeOverride": false,
           "id": 20,
           "interval": null,
           "links": [],
@@ -710,8 +695,8 @@
               "textEditor": false
             }
           ],
-          "thresholds": "0,0",
-          "timeFrom": "1h",
+          "thresholds": "0,1",
+          "timeFrom": null,
           "title": "Answers per Minute",
           "transparent": false,
           "type": "singlestat",
@@ -734,7 +719,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -742,11 +727,11 @@
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "hideTimeOverride": true,
+          "hideTimeOverride": false,
           "id": 21,
           "interval": null,
           "links": [],
@@ -789,8 +774,8 @@
               "textEditor": false
             }
           ],
-          "thresholds": "0,0",
-          "timeFrom": "1h",
+          "thresholds": "0,1",
+          "timeFrom": null,
           "title": "Comments per Minute",
           "transparent": false,
           "type": "singlestat",
@@ -813,7 +798,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -821,11 +806,11 @@
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "hideTimeOverride": true,
+          "hideTimeOverride": false,
           "id": 22,
           "interval": null,
           "links": [],
@@ -868,8 +853,8 @@
               "textEditor": false
             }
           ],
-          "thresholds": "0,0",
-          "timeFrom": "1h",
+          "thresholds": "0,1",
+          "timeFrom": null,
           "title": "Votes per Minute",
           "transparent": false,
           "type": "singlestat",
@@ -892,7 +877,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_STACKSTATS0}",
+          "datasource": null,
           "decimals": null,
           "editable": true,
           "error": false,
@@ -947,7 +932,7 @@
             }
           ],
           "thresholds": "",
-          "timeFrom": "15m",
+          "timeFrom": "3h",
           "title": "Total Badges",
           "transparent": true,
           "type": "singlestat",
@@ -988,7 +973,7 @@
       ],
       "showTitle": false,
       "titleSize": "h6",
-      "height": "100",
+      "height": "125",
       "repeat": null,
       "repeatRowId": null,
       "repeatIteration": null,
@@ -999,8 +984,8 @@
       "panels": [
         {
           "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
+          "bars": true,
+          "datasource": "stackStats0",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -1016,7 +1001,7 @@
             "total": false,
             "values": false
           },
-          "lines": true,
+          "lines": false,
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
@@ -1027,12 +1012,14 @@
           "seriesOverrides": [
             {
               "alias": "Total",
+              "bars": false,
               "fill": 0,
+              "lines": true,
               "linewidth": 1,
               "yaxis": 2
             }
           ],
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -1085,8 +1072,8 @@
         },
         {
           "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
+          "bars": true,
+          "datasource": "stackStats0",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -1102,7 +1089,7 @@
             "total": false,
             "values": false
           },
-          "lines": true,
+          "lines": false,
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
@@ -1113,12 +1100,14 @@
           "seriesOverrides": [
             {
               "alias": "Total",
+              "bars": false,
               "fill": 0,
+              "lines": true,
               "linewidth": 1,
               "yaxis": 2
             }
           ],
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -1170,8 +1159,8 @@
         },
         {
           "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
+          "bars": true,
+          "datasource": "stackStats0",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -1187,7 +1176,7 @@
             "total": false,
             "values": false
           },
-          "lines": true,
+          "lines": false,
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
@@ -1198,12 +1187,14 @@
           "seriesOverrides": [
             {
               "alias": "Total",
+              "bars": false,
               "fill": 0,
+              "lines": true,
               "linewidth": 1,
               "yaxis": 2
             }
           ],
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -1255,8 +1246,8 @@
         },
         {
           "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
+          "bars": true,
+          "datasource": "stackStats0",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -1272,7 +1263,7 @@
             "total": false,
             "values": false
           },
-          "lines": true,
+          "lines": false,
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
@@ -1283,12 +1274,14 @@
           "seriesOverrides": [
             {
               "alias": "Total",
+              "bars": false,
               "fill": 0,
+              "lines": true,
               "linewidth": 1,
               "yaxis": 2
             }
           ],
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -1340,265 +1333,8 @@
         },
         {
           "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
-          "decimals": 2,
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "height": "",
-          "id": 11,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "Total",
-              "fill": 0,
-              "linewidth": 1,
-              "yaxis": 2
-            }
-          ],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refId": "B",
-              "target": "alias(movingAverage(scaleToSeconds(derivative(stack.stats.total_accepted), 60), '30min'), 'Per Minute')"
-            },
-            {
-              "refId": "C",
-              "target": "alias(stack.stats.total_accepted, 'Total')"
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Accepted",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "transparent": true,
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
-          "decimals": 2,
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "height": "",
-          "id": 12,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "Total",
-              "fill": 0,
-              "linewidth": 1,
-              "yaxis": 2
-            }
-          ],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "hide": true,
-              "refId": "C",
-              "target": "stack.stats.total_questions"
-            },
-            {
-              "refId": "A",
-              "target": "alias(movingAverage(divideSeries(stack.stats.total_accepted, #C), '30min'), 'Accepted')",
-              "targetFull": "alias(movingAverage(divideSeries(stack.stats.total_accepted, stack.stats.total_questions), '30min'), 'Accepted')"
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Accepted (%)",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "transparent": true,
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "percentunit",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
-          "decimals": 2,
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "height": "",
-          "id": 8,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "Total",
-              "fill": 0,
-              "linewidth": 1,
-              "yaxis": 2
-            }
-          ],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refId": "B",
-              "target": "alias(movingAverage(scaleToSeconds(derivative(stack.stats.total_badges), 60), '30min'), 'Per Minute')"
-            },
-            {
-              "refId": "C",
-              "target": "alias(stack.stats.total_badges, 'Total')"
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Badges",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "transparent": true,
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_STACKSTATS0}",
+          "bars": true,
+          "datasource": "stackStats0",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -1614,7 +1350,7 @@
             "total": false,
             "values": false
           },
-          "lines": true,
+          "lines": false,
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
@@ -1625,12 +1361,14 @@
           "seriesOverrides": [
             {
               "alias": "Total",
+              "bars": false,
               "fill": 0,
+              "lines": true,
               "linewidth": 1,
               "yaxis": 2
             }
           ],
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -1679,6 +1417,93 @@
               "show": true
             }
           ]
+        },
+        {
+          "aliasColors": {},
+          "bars": true,
+          "datasource": "stackStats0",
+          "decimals": 2,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "height": "",
+          "id": 8,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": false,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Total",
+              "bars": false,
+              "fill": 0,
+              "lines": true,
+              "linewidth": 1,
+              "yaxis": 2
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "alias(movingAverage(scaleToSeconds(derivative(stack.stats.total_badges), 60), '30min'), 'Per Minute')"
+            },
+            {
+              "refId": "C",
+              "target": "alias(stack.stats.total_badges, 'Total')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Badges",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
         }
       ],
       "showTitle": false,
@@ -1691,3 +1516,4 @@
     }
   ]
 }
+

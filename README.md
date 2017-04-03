@@ -1,3 +1,8 @@
+<!-- version: 1 -->
+<!-- tag: app -->
+<!-- thumbnail: https://i.stack.imgur.com/DAEHW.png -->
+<!-- excerpt: View real time and historical trend statistics from StackOverflow. -->
+
 # GrafOverflow
 
 A metric collection script for the StackOverflow API.
@@ -6,25 +11,21 @@ A metric collection script for the StackOverflow API.
 
 Here is a link for you to view some stats in real* time.
 
-[**https://www.grafoverflow.com/**](https://www.grafoverflow.com/)
+[**https://www.grafoverflow.com/**][1]
 
-The StatsUI is currently run via a hosted Grafana instance; you will be required to validate your email address upon signup. If usage demands, the instance will be scaled.
+[![Screenshot of Dasboard][2]][1]
 
-[![enter image description here][1]][1]
-
-[![enter image description here][2]][2]
-
-*Stats are collected every 5 minutes, and smoothed to a 30 minute average to account for API caching ( on the query ).
+*Stats are collected every 5 minutes, and smoothed to a 30 minute average ( on query ) to account for API caching.
 
 ## About
 
-Data is beautiful, so why not draw some graphs about the site that helps me draw some graphs.
+Data is beautiful, so why not draw some beautiful graphs about the site that helps so many.
 
-This scripts is based around the [carbon-cache](http://graphite.readthedocs.io/en/latest/carbon-daemons.html) metric storage backend, and is using [Grafana](https://grafana.com/) for the UI.
+This script is based around the [carbon-cache](http://graphite.readthedocs.io/en/latest/carbon-daemons.html) metric storage backend, and is using [Grafana](https://grafana.com/) for the UI.
 
-To query the API, I write up a quick **node.js** script that will run a collection on a 5 minute interval.
+To query the API, I wrote up a **node.js** script that will run a collection on a 5 minute interval; this then parses the JSON response from the SE API into a format parsable by the metric engine, opens a socket, and sends it.
 
-In the above screenshots, you can see the result of simply collecting and graphing the data returned by the [/info](https://api.stackexchange.com/docs/info) api endpoint.
+In the above screenshot, you can see the result of simply collecting and graphing the data returned by the [/info](https://api.stackexchange.com/docs/info) API endpoint.
 
 The list of statistics collected and graphed:
 
@@ -65,8 +66,8 @@ To start the application, simply run the main file with node.
 Created by:<br/>
 &nbsp;&nbsp;Matthew Clark<br/>
 &nbsp;&nbsp;matt@mclarkdev.com<br/>
-&nbsp;&nbsp;[GrafOverflow.com](https://www.grafoverflow.com)
 
 
-  [1]: https://i.stack.imgur.com/WLBWB.png
-  [2]: https://i.stack.imgur.com/dcui7.png
+  [1]: https://www.grafoverflow.com
+  [2]: https://i.stack.imgur.com/tq8hm.png
+

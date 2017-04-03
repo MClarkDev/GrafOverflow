@@ -1,24 +1,33 @@
+/**
+ * GrafOverflow Statistics Collection
+ *
+ * Matthew Clark (2017)
+ * matt@mclarkdev.com
+ */
+
+// Load configuration file or fail.
 var config = require('./config.js');
 
+// Load required modules or fail.
 var CronJob = require('cron').CronJob;
-
 var http = require("https");
-
 var zlib = require("zlib");
-
 var net = require('net');
 
-// Method to collect stats from API
+// Method to collect stats from API.
 function collectStats() {
 
+	// Log beginning of collection.
 	console.log( (new Date()).toLocaleString() + " - Collecting stats..." );
 
+	// Options for the HTTP request
 	var options = {
 		host: "api.stackexchange.com",
 		port: 443,
 		path: "/2.2/info?site=stackoverflow&key=" + config.key
 	};
 
+	// Make the API request.
 	http.get(options, function (res) {
 
 		var buffer = [];
@@ -29,17 +38,26 @@ function collectStats() {
 
 		gunzip.on('data', function(data) {
 
-			// decompression chunk ready, add it to the buffer
+			// chunk ready, push to buffer
 			buffer.push(data.toString())
 
 		}).on("end", function() {
 
-			// response and decompression complete, join the buffer and return
+			// response and decompression complete
+			// join the buffer and parse
 			parse(buffer.join(""));
 
 		}).on("error", function(e) {
+
+			// log error
+			console.log( (new Date()).toLocaleString() + " - Encountered error" );
+			console.log( e.stack );
 		})
 	}).on('error', function(e) {
+
+		// log error
+		console.log( (new Date()).toLocaleString() + " - Encountered error" );
+		console.log( e.stack );
 	});
 }
 
