@@ -14,17 +14,28 @@ var http = require("https");
 var zlib = require("zlib");
 var net = require('net');
 
-// Method to collect stats from API.
-function collectStats() {
+// Collect stats from all configued sites.
+function collectAllStats() {
+
+	// Loop all configured sites
+	for ( site in config.sites ) {
+
+		// Call collection for site
+		collectStats(config.sites[site]);
+	}
+}
+
+// Method to collect stats from API for a single site.
+function collectStats(site) {
 
 	// Log beginning of collection.
-	console.log( (new Date()).toLocaleString() + " - Collecting stats..." );
+	console.log( (new Date()).toLocaleString() + " - Collecting Stats [ " + site + " ]" );
 
 	// Options for the HTTP request
 	var options = {
 		host: "api.stackexchange.com",
 		port: 443,
-		path: "/2.2/info?site=stackoverflow&key=" + config.key
+		path: "/2.2/info?site=" + site + "&key=" + config.key
 	};
 
 	// Make the API request.
@@ -45,7 +56,7 @@ function collectStats() {
 
 			// response and decompression complete
 			// join the buffer and parse
-			parse(buffer.join(""));
+			parse(site, buffer.join(""));
 
 		}).on("error", function(e) {
 
@@ -62,13 +73,16 @@ function collectStats() {
 }
 
 // Method to parse JSON response
-function parse(blob) {
+function parse(site, blob) {
 
 	// Get current time
 	var time = Math.round((new Date()).getTime() / 1000);
 
 	// Log message
-	console.log( (new Date()).toLocaleString() + " - Parsing response [ " + time + " ]" );
+	console.log( (new Date()).toLocaleString() + " - Parsing response [ " + site + " : " + time + " ]" );
+
+	// Strip dots from site name
+	site = site.replace(/\./g, "_");
 
 	// Parse JSON from response object
 	var json = JSON.parse( blob );
@@ -87,7 +101,7 @@ function parse(blob) {
 	for ( var key in stats ) {
 
 		// Add line item to blob
-		blob += "stack.stats." + key + " " + stats[key] + " " + time + "\n";
+		blob += "stack.stats." + site + "." + key + " " + stats[key] + " " + time + "\n";
 	}
 
 	// Create connection to stats serve
@@ -122,7 +136,8 @@ console.log( (new Date()).toLocaleString() + " - At your service." );
 // Add new cronjob to fetch and parse
 new CronJob(config.cronSchedule, function() {
 
-	// Call collection
-	collectStats();
+	collectAllStats();
 }, null, true, 'America/New_York');
+
+collectAllStats();
 

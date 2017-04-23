@@ -3,6 +3,8 @@ module.exports = {
 	// StackExchange API key
 	key : "",
 
+	sites : [ "stackoverflow.com" ],
+
 	// Graphite Host and Port to send stats data
 	grafHost : "127.0.0.1",
 	grafPort : 2003,
