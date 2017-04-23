@@ -20,8 +20,14 @@ function collectAllStats() {
 	// Loop all configured sites
 	for ( site in config.sites ) {
 
-		// Call collection for site
-		collectStats(config.sites[site]);
+		try {
+
+			// Call collection for site
+			collectStats(config.sites[site]);
+		} catch(err) {
+
+			console.log( (new Date()).toLocaleString() + " - Error Collecting Stats [ " + err.message + " ]" );
+		}
 	}
 }
 
