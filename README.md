@@ -11,7 +11,7 @@ A metric collection script for the StackOverflow API.
 
 Here is a link for you to view some stats in real* time.
 
-[**https://www.grafoverflow.com/**][1]
+[**GrafOverflow**][1]
 
 [![Screenshot of Dasboard][2]][1]
 
@@ -68,6 +68,6 @@ Created by:<br/>
 &nbsp;&nbsp;matt@mclarkdev.com<br/>
 
 
-  [1]: https://www.grafoverflow.com
+  [1]: https://manage.mclarkdev.com/grafana/dashboard/db/stack-stats
   [2]: https://i.stack.imgur.com/tq8hm.png
 
